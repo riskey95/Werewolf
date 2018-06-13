@@ -51,6 +51,11 @@ namespace Werewolf_Node.Models
         public int Votes { get; set; } = 0;
 
         /// <summary>
+        /// Who lynched who? (For secret lynching)
+        /// </summary>
+        public Dictionary<IPlayer, int> VotedBy = new Dictionary<IPlayer, int>();
+
+        /// <summary>
         /// For the gunner only
         /// </summary>
         public int Bullet { get; set; } = 2;
@@ -144,7 +149,7 @@ namespace Werewolf_Node.Models
         Village, Cult, Wolf, Tanner,
         Neutral, SerialKiller, Lovers,
         SKHunter,
-        NoOne
+        NoOne, Thief
     }
 
     public enum KillMthd
